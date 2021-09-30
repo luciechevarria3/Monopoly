@@ -1,6 +1,6 @@
 
 package edu.ncsu.monopoly.gui;
-
+import java.applet.*;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
