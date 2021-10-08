@@ -5,15 +5,15 @@ import java.util.Hashtable;
 
 public class GameBoard {
 
-	private ArrayList cells = new ArrayList();
-    private ArrayList chanceCards = new ArrayList();
+	private ArrayList<IOwnable> cells = new ArrayList<IOwnable>();
+    private ArrayList<Card> chanceCards = new ArrayList<Card>();
 	//the key of colorGroups is the name of the color group.
-	private Hashtable colorGroups = new Hashtable();
-	private ArrayList communityChestCards = new ArrayList();
+	private Hashtable<String, Integer> colorGroups = new Hashtable<String, Integer>();
+	private ArrayList<Card> communityChestCards = new ArrayList<Card>();
 	private GameMaster gameMaster;
 	
 	public GameBoard() {
-		Cell go = new GoCell();
+		IOwnable go = new GoCell();
 		addCell(go);
 	}
 
@@ -25,25 +25,26 @@ public class GameBoard {
         }
     }
 	
-	public void addCell(Cell cell) {
+	public void addCell(IOwnable cell) {
 		cells.add(cell);
 	}
 	
 	public void addCell(PropertyCell cell) {
-		int propertyNumber = getPropertyNumberForColor(cell.getColorGroup());
-		colorGroups.put(cell.getColorGroup(), new Integer(propertyNumber + 1));
+		String colorGroup = cell.getColorGroup();
+		int propertyNumber = getPropertyNumberForColor(colorGroup);
+		colorGroups.put(colorGroup, new Integer(propertyNumber + 1));
         cells.add(cell);
 	}
 
     public Card drawCCCard() {
-        Card card = (Card)communityChestCards.get(0);
+        Card card = communityChestCards.get(0);
         communityChestCards.remove(0);
         addCard(card);
         return card;
     }
 
     public Card drawChanceCard() {
-        Card card = (Card)chanceCards.get(0);
+        Card card = chanceCards.get(0);
         chanceCards.remove(0);
         addCard(card);
         return card;
@@ -62,7 +63,7 @@ public class GameBoard {
 			new PropertyCell[getPropertyNumberForColor(color)];
 		int counter = 0;
 		for (int i = 0; i < getCellNumber(); i++) {
-			Cell c = getCell(i);
+			IOwnable c = getCell(i);
 			if(c instanceof PropertyCell) {
 				PropertyCell pc = (PropertyCell)c;
 				if(pc.getColorGroup().equals(color)) {
@@ -75,7 +76,7 @@ public class GameBoard {
 	}
 	
 	public int getPropertyNumberForColor(String name) {
-		Integer number = (Integer)colorGroups.get(name);
+		Integer number = colorGroups.get(name);
 		if(number != null) {
 			return number.intValue();
 		}

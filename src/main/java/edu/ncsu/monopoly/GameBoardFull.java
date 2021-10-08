@@ -4,12 +4,12 @@ public class GameBoardFull extends GameBoard {
     public GameBoardFull() {
         super();
         PropertyCell dp1 = new PropertyCell();
-        CardCell cc1 = new CardCell(Card.TYPE_CC, "Community Chest 1");
+        IOwnable cc1 = new CardCell(Card.TYPE_CC, "Community Chest 1");
         PropertyCell dp2 = new PropertyCell();
         PropertyCell dp3 = new PropertyCell();
         RailRoadCell rr1 = new RailRoadCell();
         PropertyCell lb1 = new PropertyCell();
-        CardCell c1 = new CardCell(Card.TYPE_CHANCE, "Chance 1");
+        IOwnable c1 = new CardCell(Card.TYPE_CHANCE, "Chance 1");
         PropertyCell lb2 = new PropertyCell();
         PropertyCell lb3 = new PropertyCell();
         JailCell jail = new JailCell();
@@ -19,12 +19,12 @@ public class GameBoardFull extends GameBoard {
         PropertyCell p3 = new PropertyCell();
         RailRoadCell rr2 = new RailRoadCell();
         PropertyCell o1 = new PropertyCell();
-        CardCell cc2 = new CardCell(Card.TYPE_CC, "Community Chest 2");
+        IOwnable cc2 = new CardCell(Card.TYPE_CC, "Community Chest 2");
         PropertyCell o2 = new PropertyCell();
         PropertyCell o3 = new PropertyCell();
         FreeParkingCell fp = new FreeParkingCell();
         PropertyCell r1 = new PropertyCell();
-        CardCell c2 = new CardCell(Card.TYPE_CHANCE, "Chance 2");
+        IOwnable c2 = new CardCell(Card.TYPE_CHANCE, "Chance 2");
         PropertyCell r2 = new PropertyCell();
         PropertyCell r3 = new PropertyCell();
         RailRoadCell rr3 = new RailRoadCell();
@@ -35,29 +35,30 @@ public class GameBoardFull extends GameBoard {
         GoToJailCell goToJail = new GoToJailCell();
         PropertyCell g1 = new PropertyCell();
         PropertyCell g2 = new PropertyCell();
-        CardCell cc3 = new CardCell(Card.TYPE_CC, "Community Chest 3");
+        IOwnable cc3 = new CardCell(Card.TYPE_CC, "Community Chest 3");
         PropertyCell g3 = new PropertyCell();
         RailRoadCell rr4 = new RailRoadCell();
-        CardCell c3 = new CardCell(Card.TYPE_CHANCE, "Chance 3");
+        IOwnable c3 = new CardCell(Card.TYPE_CHANCE, "Chance 3");
         PropertyCell db1 = new PropertyCell();
         PropertyCell db2 = new PropertyCell();
         PropertyCell db3 = new PropertyCell();
         
 
         dp1.setPrice(60);
-        dp1.setColorGroup("purple");
+        String dp1Color = "purple";
+		dp1.setColorGroup(dp1Color);
         dp1.setHousePrice(50);
         dp1.setName("Mediterranean Avenue");
         dp1.setRent(2);
         
         dp2.setPrice(60);
-        dp2.setColorGroup("purple");
+        dp2.setColorGroup(dp1Color);
         dp2.setHousePrice(50);
         dp2.setName("Baltic Avenue");
         dp2.setRent(4);
         
         dp3.setPrice(60);
-        dp3.setColorGroup("purple");
+        dp3.setColorGroup(dp1Color);
         dp3.setHousePrice(50);
         dp3.setName("Sarah Avenue");
         dp3.setRent(4);
@@ -81,37 +82,39 @@ public class GameBoardFull extends GameBoard {
         lb3.setRent(8);
         
         p1.setPrice(140);
-        p1.setColorGroup("fuchsia");
+        String p1Color = "fuchsia";
+		p1.setColorGroup(p1Color);
         p1.setHousePrice(100);
         p1.setName("St. Charles Place");
         p1.setRent(10);
         
         p2.setPrice(140);
-        p2.setColorGroup("fuchsia");
+        p2.setColorGroup(p1Color);
         p2.setHousePrice(100);
         p2.setName("States Avenue");
         p2.setRent(10);
         
         p3.setPrice(160);
-        p3.setColorGroup("fuchsia");
+        p3.setColorGroup(p1Color);
         p3.setHousePrice(100);
         p3.setName("Virginia Avenue");
         p3.setRent(12);
         
         o1.setPrice(180);
-        o1.setColorGroup("maroon");
+        String o1Maroon = "maroon";
+		o1.setColorGroup(o1Maroon);
         o1.setHousePrice(100);
         o1.setName("St. James Avenue");
         o1.setRent(14);
         
         o2.setPrice(180);
-        o2.setColorGroup("maroon");
+        o2.setColorGroup(o1Maroon);
         o2.setHousePrice(100);
         o2.setName("Tennessee Avenue");
         o2.setRent(14);
         
         o3.setPrice(200);
-        o3.setColorGroup("maroon");
+        o3.setColorGroup(o1Maroon);
         o3.setHousePrice(100);
         o3.setName("New York Avenue");
         o3.setRent(16);
@@ -135,37 +138,39 @@ public class GameBoardFull extends GameBoard {
         r3.setRent(20);
         
         y1.setPrice(260);
-        y1.setColorGroup("yellow");
+        String y1Color = "yellow";
+		y1.setColorGroup(y1Color);
         y1.setHousePrice(150);
         y1.setName("Atlantic Avenue");
         y1.setRent(22);
         
         y2.setPrice(260);
-        y2.setColorGroup("yellow");
+        y2.setColorGroup(y1Color);
         y2.setHousePrice(150);
         y2.setName("Ventnor Avenue");
         y2.setRent(22);
         
         y3.setPrice(280);
-        y3.setColorGroup("yellow");
+        y3.setColorGroup(y1Color);
         y3.setHousePrice(150);
         y3.setName("Marvin Gardens");
         y3.setRent(24);
         
         g1.setPrice(300);
-        g1.setColorGroup("green");
+        String g1Color = "green";
+		g1.setColorGroup(g1Color);
         g1.setHousePrice(200);
         g1.setName("Pacific Avenue");
         g1.setRent(26);
         
         g2.setPrice(300);
-        g2.setColorGroup("green");
+        g2.setColorGroup(g1Color);
         g2.setHousePrice(200);
         g2.setName("North Carolina Avenue");
         g2.setRent(26);
         
         g3.setPrice(320);
-        g3.setColorGroup("green");
+        g3.setColorGroup(g1Color);
         g3.setHousePrice(200);
         g3.setName("Pennsylvania Avenue");
         g3.setRent(28);
