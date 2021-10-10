@@ -35,7 +35,7 @@ public class BuyHouseDialog extends JDialog {
 		JButton btn = new JButton("Cancel");
 		btn.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				cancelClicked();
+				dispose();
 			}
 		});
 		return btn;
@@ -66,9 +66,6 @@ public class BuyHouseDialog extends JDialog {
 		return btn;
 	}
 	
-	private void cancelClicked() {
-		this.dispose();
-	}
 	
 	private void okClicked() {
 		String monopoly = (String)cboMonopoly.getSelectedItem();

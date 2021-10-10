@@ -4,6 +4,8 @@ public class RailRoadCell extends Cell {
 	static private int baseRent;
 	static public String COLOR_GROUP = "RAILROAD";
 	static private int price;
+	private boolean available = true;
+	private Player currentPlayer;
 
 	public static void setBaseRent(int baseRent) {
 		RailRoadCell.baseRent = baseRent;
@@ -13,7 +15,6 @@ public class RailRoadCell extends Cell {
 		RailRoadCell.price = price;
 	}
 
-	private boolean available = true;
 	
 	public int getPrice() {
 		return RailRoadCell.price;
@@ -24,7 +25,7 @@ public class RailRoadCell extends Cell {
 	}
 	
 	public void playAction() {
-		Player currentPlayer = null;
+		currentPlayer = null;
 		if(!isAvailable()) {
 			currentPlayer = GameMaster.instance().getCurrentPlayer();
 			if(propietary != currentPlayer) {

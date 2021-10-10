@@ -56,13 +56,14 @@ public class TestDiceRollDialog extends JDialog {
                 }
                 if(amount > 0) {
 	                diceRoll = new int[2];
-	                if((amount % 2) == 0) {
-	                	diceRoll[0] = amount / 2;
-	                	diceRoll[1] = amount / 2;
+	                int halfAmount = amount / 2;
+					if((amount % 2) == 0) {
+	                	diceRoll[0] = halfAmount;
+	                	diceRoll[1] = halfAmount;
 	                }
 	                else {
-	                	diceRoll[0] = amount / 2;
-	                	diceRoll[1] = (amount / 2) + 1;
+	                	diceRoll[0] = halfAmount;
+	                	diceRoll[1] = halfAmount + 1;
 	                }
                 }
                 hide();
