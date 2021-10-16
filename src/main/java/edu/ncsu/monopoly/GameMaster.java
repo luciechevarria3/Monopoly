@@ -173,7 +173,7 @@ public class GameMaster {
 		return players.indexOf(player);
 	}
 
-	// Added commentarygaa
+	// Added commentarygaaAA
     public ArrayList getSellerList() {
         ArrayList sellers = new ArrayList();
         for (Iterator iter = players.iterator(); iter.hasNext();) {
